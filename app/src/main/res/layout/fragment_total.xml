@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="viewModel"
+            type="mob.dau.ordercpu.model.CpuViewModel" />
+    </data>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.TotalFragment">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?attr/textAppearanceBody1"
+                        android:text="@string/manufacturer"
+                        android:textAllCaps="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="DFFF"
+                        android:textAppearance="?attr/textAppearanceBody1"
+                        android:layout_marginTop="4dp"
+                        android:text="@{viewModel.cpuManufacturer}" />
+
+                    <View
+                        android:id="@+id/divider"
+                        style="@style/Widget.OrderCPU.Divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="16dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:textAppearance="?attr/textAppearanceBody1"
+                        android:text="@string/model_label"
+                        android:textAllCaps="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="DFFF"
+                        android:textAppearance="?attr/textAppearanceBody1"
+                        android:layout_marginTop="4dp"
+                        android:text="@{viewModel.cpuModel}" />
+
+                    <View
+                        android:id="@+id/divider1"
+                        style="@style/Widget.OrderCPU.Divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="16dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:textAppearance="?attr/textAppearanceBody1"
+                        android:text="@string/quantity_label"
+                        android:textAllCaps="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="DFFF"
+                        android:textAppearance="?attr/textAppearanceBody1"
+                        android:layout_marginTop="4dp"
+                        android:text="@{viewModel.quantity.toString()}" />
+
+                    <View
+                        android:id="@+id/divider2"
+                        style="@style/Widget.OrderCPU.Divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="16dp" />
+
+                    <TextView
+                        android:id="@+id/total_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="TOTAL PRICE"
+                        android:layout_gravity="end"
+                        android:textAppearance="?attr/textAppearanceHeadline5"
+                        android:layout_marginTop="24dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/send_button"
+                        style="@style/Widget.Material3.Button.ElevatedButton"
+                        android:backgroundTint="@color/blue_500"
+                        android:minWidth="200dp"
+                        android:textAppearance="?attr/textAppearanceBody1"
+                        android:textColor="@color/white"
+                        android:minHeight="50dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:textAllCaps="true"
+                        android:text="@string/send_label" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/cancel_button"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:backgroundTint="@color/white"
+                        android:minWidth="290dp"
+                        app:strokeColor="@color/dark_gray"
+                        android:textAppearance="?attr/textAppearanceBody1"
+                        android:textColor="@color/blue_500"
+                        android:minHeight="50dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:textAllCaps="true"
+                        android:text="@string/cancel_label" />
+
+                </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
+

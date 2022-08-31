@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="amd_1">Ryzen 5 5500</string>
+    <string name="amd_2">Ryzen 5 5600</string>
+    <string name="amd_3">Ryzen 5 5600X</string>
+    <string name="amd_4">Ryzen 7 5700G</string>
+    <string name="amd_5">Ryzen 7 5700X</string>
+    <string name="amd_6">Ryzen 7 5800X</string>
+    <string name="amd_7">Ryzen 7 5800X3D</string>
+    <string name="amd_8">Ryzen 9 5900X</string>
+    <string name="amd_9">Ryzen 9 5950X</string>
+
+</resources>

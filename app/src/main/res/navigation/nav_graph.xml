@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/manufacturerFragment">
+
+    <fragment
+        android:id="@+id/manufacturerFragment"
+        android:name="mob.dau.ordercpu.ui.ManufacturerFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_manufacturer" >
+        <action
+            android:id="@+id/action_manufacturerFragment_to_processorModelFragment"
+            app:destination="@id/processorModelFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/processorModelFragment"
+        android:name="mob.dau.ordercpu.ui.ProcessorModelFragment"
+        android:label="@string/order_cpu_fragment_label"
+        tools:layout="@layout/fragment_cpu_models">
+        <argument
+            android:name="manufacturer"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_processorModelFragment_to_amountFragment"
+            app:destination="@id/amountFragment" />
+        <action
+            android:id="@+id/action_processorModelFragment_to_manufacturerFragment"
+            app:destination="@id/manufacturerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/amountFragment"
+        android:name="mob.dau.ordercpu.ui.AmountFragment"
+        android:label="AmountFragment"
+        tools:layout="@layout/fragment_amount">
+        <action
+            android:id="@+id/action_amountFragment_to_totalFragment"
+            app:destination="@id/totalFragment" />
+        <action
+            android:id="@+id/action_amountFragment_to_manufacturerFragment"
+            app:destination="@id/manufacturerFragment"
+            app:popUpTo="@id/manufacturerFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/totalFragment"
+        android:name="mob.dau.ordercpu.ui.TotalFragment"
+        android:label="TotalFragment"
+        tools:layout="@layout/fragment_total">
+        <action
+            android:id="@+id/action_totalFragment_to_manufacturerFragment"
+            app:destination="@id/manufacturerFragment"
+            app:popUpTo="@id/manufacturerFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

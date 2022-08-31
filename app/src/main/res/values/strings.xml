@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">OrderCPU</string>
+    <string name="amd_label">AMD</string>
+    <string name="intel_label">Intel</string>
+    <string name="order_cpu_fragment_label">{manufacturer} Series Models</string>
+    <string name="next_label">Next</string>
+
+    <string name="one_label">One</string>
+    <string name="two_label">Two</string>
+    <string name="three_label">Three</string>
+    <string name="amount_label">Amount</string>
+    <string name="or_label">Or</string>
+    <string name="price_label">Price %s</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="manufacturer">Manufacturer</string>
+    <string name="model_label">model</string>
+    <string name="quantity_label">Quantity</string>
+    <string name="total_label">TOTAL: %s</string>
+    <string name="send_label">send order to another app</string>
+    <string name="cancel_label">Cancel</string>
+
+    <string name="new_cpu_order">New CPU Order</string>
+    <string name="order_details">Quantity: %1$s \n Manufacturer: %2$s \nModel: %3$s \nTotal: %4$s \n\n Thank you!</string>
+    <plurals name="cpus">
+        <item quantity="one">%d CPUs</item>
+        <item quantity="other">%d CPUs</item>
+    </plurals>
+</resources>

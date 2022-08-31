@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="intel_1">Core i3 12100F</string>
+    <string name="intel_2">Core i3 12300</string>
+    <string name="intel_3">Core i5 12400F</string>
+    <string name="intel_4">Core i5 12500</string>
+    <string name="intel_5">Core i5 12600KF</string>
+    <string name="intel_6">Core i7 12700KF</string>
+    <string name="intel_7">Core i9 12900KF</string>
+</resources>

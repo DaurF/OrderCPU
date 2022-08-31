@@ -1,0 +1,67 @@
+package mob.dau.ordercpu.ui
+
+import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
+import mob.dau.ordercpu.R
+import mob.dau.ordercpu.databinding.FragmentManufacturerBinding
+import mob.dau.ordercpu.model.CpuViewModel
+
+class ManufacturerFragment : Fragment() {
+    private val sharedViewModel: CpuViewModel by activityViewModels()
+
+    private var _binding: FragmentManufacturerBinding? = null
+    private val binding
+        get() = _binding!!
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        _binding = FragmentManufacturerBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        binding.apply {
+            amdButton.setOnClickListener {
+                if (sharedViewModel.hasNoModel()) {
+                    sharedViewModel.setModelAndPricePerUnit(getString(R.string.amd_1), 159)
+                } else {
+                    if (sharedViewModel.cpuManufacturer.value.equals(getString(R.string.intel_label))) {
+                        sharedViewModel.setModelAndPricePerUnit(getString(R.string.amd_1), 159)
+                    }
+                }
+
+                chooseManufacturer(getString(R.string.amd_label))
+            }
+            intelButton.setOnClickListener {
+                if (sharedViewModel.hasNoModel()) {
+                    sharedViewModel.setModelAndPricePerUnit(getString(R.string.intel_1), 97)
+                } else {
+                    if (sharedViewModel.cpuManufacturer.value.equals(getString(R.string.amd_label))) {
+                        sharedViewModel.setModelAndPricePerUnit(getString(R.string.intel_1), 97)
+                    }
+                }
+                chooseManufacturer(getString(R.string.intel_label))
+            }
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
+    private fun chooseManufacturer(manufacturer: String) {
+        sharedViewModel.setManufacturer(manufacturer)
+        val action = ManufacturerFragmentDirections
+            .actionManufacturerFragmentToProcessorModelFragment(manufacturer = manufacturer)
+        findNavController().navigate(action)
+    }
+}
